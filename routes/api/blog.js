@@ -15,10 +15,15 @@ exports.categoryList = function(req, res) {
  * List Blog per Categories
  */
 exports.blogList = function(req, res) {
-  keystone.list('Post').model.where('categories').in([req.params.category]).exec((err, posts) => {
-    if (err) return res.json({ err: err });
-    res.send(posts)
-  });
+  keystone.list('PostCategory').model.findById(req.params.category).exec(function(err, item) {
+    keystone.list('Post').model.where('categories').in([req.params.category]).exec((err, posts) => {
+      if (err) return res.json({ err: err });
+      res.send({
+        category: item,
+        posts: posts
+      })
+    });
+  });  
 }
 
 /**

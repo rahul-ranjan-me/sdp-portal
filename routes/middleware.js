@@ -7,9 +7,8 @@ var _ = require('lodash');
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
 		{ label: 'Home', key: 'home', href: '/' },
-		{ label: 'Blog', key: 'blog', href: '/blog' },
+		{ label: 'Developer', key: 'blog', href: '/developer' },
 		{ label: 'Products', key: 'product', href: '/product' },
-		{ label: 'Team', key: 'team', href: '/pages/team' },
 		{ label: 'Gallery', key: 'gallery', href: '/gallery' },
 		{ label: 'Contact', key: 'contact', href: '/contact' },
 	];

@@ -22,6 +22,7 @@ exports = module.exports = function (app) {
 	app.get('/api/page/:page', routes.api.page.page);
 	app.get('/api/gallery', routes.api.gallery.galleries);
 	app.get('/api/gallery/:gallery', routes.api.gallery.gallery);
+	
 	app.get('/api/blog', routes.api.blog.categoryList);
 	app.get('/api/blog/:category', routes.api.blog.blogList);
 	app.get('/api/blog/post/:post', routes.api.blog.blogPost);
@@ -35,7 +36,7 @@ exports = module.exports = function (app) {
 	app.all('/api/contact', routes.api.contact.create);
 	
 
-	app.get('/api/search', routes.api.blog.search);
+	app.get('/api/search', routes.api.search.search);
 	app.get('/api/people', routes.api.people.list);
 
 	// Views	
